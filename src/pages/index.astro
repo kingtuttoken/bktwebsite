@@ -1,0 +1,665 @@
+---
+const year = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#05070b" />
+    <meta name="description" content="Boy King Tut — Coming Soon." />
+    <title>Boy King Tut | Coming Soon</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#home" aria-label="Boy King Tut home">
+          <span class="brand-mark">☥</span>
+          <span>Boy King Tut</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#updates">Updates</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section id="home" class="hero">
+          <div class="hero-image" aria-hidden="true"></div>
+          <div class="hero-overlay"></div>
+          <div class="stars"></div>
+
+          <div class="hero-content">
+            <div class="ornament" aria-hidden="true">
+              <span></span><b>𓂀</b><span></span>
+            </div>
+
+            <p class="eyebrow">The Royal Journey Continues</p>
+            <h1>Coming<br />Soon</h1>
+            <p class="lead">A new royal experience is arriving soon.</p>
+
+            <form
+              id="notify-form"
+              class="notify-form"
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST"
+            >
+              <label class="sr-only" for="email">Email address</label>
+              <div class="input-wrap">
+                <span aria-hidden="true">✉</span>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="Enter your email address"
+                  required
+                />
+              </div>
+              <button type="submit">Notify Me <span>→</span></button>
+            </form>
+
+            <p class="waitlist">Join the waitlist for updates.</p>
+
+            <div class="mini-divider" aria-hidden="true">
+              <span></span><b>☥</b><span></span>
+            </div>
+          </div>
+        </section>
+
+        <section id="experience" class="pillars" aria-label="Boy King Tut experience">
+          <article>
+            <div class="icon">△</div>
+            <div>
+              <h2>Royal Heritage</h2>
+              <p>Rooted in legacy.</p>
+            </div>
+          </article>
+
+          <article>
+            <div class="icon">☥</div>
+            <div>
+              <h2>Modern Vision</h2>
+              <p>Designed for today.</p>
+            </div>
+          </article>
+
+          <article>
+            <div class="icon">𓂀</div>
+            <div>
+              <h2>Timeless Experience</h2>
+              <p>Beyond the ordinary.</p>
+            </div>
+          </article>
+        </section>
+
+        <section id="about" class="info-section">
+          <p class="section-kicker">Boy King Tut</p>
+          <h2>Ancient symbolism. Modern experience.</h2>
+          <p>
+            A new home for Boy King Tut stories, art, updates, releases, and experiences.
+            The gates are opening soon.
+          </p>
+        </section>
+
+        <section id="updates" class="updates-section">
+          <div>
+            <p class="section-kicker">Stay Connected</p>
+            <h2>Be first to enter.</h2>
+          </div>
+          <a href="#home" class="outline-button">Join the Waitlist</a>
+        </section>
+      </main>
+
+      <footer id="contact" class="footer">
+        <div class="footer-symbol">☥</div>
+        <p>© {year} Boy King Tut. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script>
+      const form = document.querySelector('#notify-form');
+
+      if (form) {
+        form.addEventListener('submit', (event) => {
+          const action = form.getAttribute('action') || '';
+          if (action.includes('YOUR_FORM_ID')) {
+            event.preventDefault();
+            alert('Add your Formspree form ID in index.astro to activate the waitlist.');
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --black: #030507;
+    --panel: #080b0f;
+    --panel-soft: #0b1016;
+    --gold: #d5a84d;
+    --gold-light: #f0cf7c;
+    --gold-dark: #8b6525;
+    --blue: #36a7d6;
+    --text: #f5f1e7;
+    --muted: #b8b2a7;
+    --line: rgba(213, 168, 77, 0.38);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(24, 63, 91, 0.28), transparent 36%),
+      var(--black);
+    color: var(--text);
+    font-family: "Inter", system-ui, sans-serif;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button,
+  input {
+    font: inherit;
+  }
+
+  .page-shell {
+    min-height: 100vh;
+    overflow: hidden;
+    border: 1px solid rgba(213, 168, 77, 0.22);
+    background: #030507;
+  }
+
+  .topbar {
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 92px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 clamp(24px, 5vw, 76px);
+    border-bottom: 1px solid rgba(213, 168, 77, 0.28);
+    background: linear-gradient(180deg, rgba(2, 4, 6, 0.96), rgba(2, 4, 6, 0.70));
+    backdrop-filter: blur(10px);
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--gold-light);
+    font-family: "Cinzel", serif;
+    font-size: clamp(1.1rem, 1.8vw, 1.65rem);
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+
+  .brand-mark {
+    font-size: 2rem;
+    color: var(--gold);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 3vw, 46px);
+    color: #e9dec5;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    font-size: 0.76rem;
+  }
+
+  .nav a {
+    position: relative;
+    padding: 10px 0;
+  }
+
+  .nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width 180ms ease;
+  }
+
+  .nav a:hover::after {
+    width: 100%;
+  }
+
+  .hero {
+    position: relative;
+    min-height: 840px;
+    height: min(930px, 100vh);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .hero-image {
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+    background-image: url('/images/boy-king-tut-anubis.png');
+    background-size: cover;
+    background-position: 58% center;
+    transform: scale(1.01);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background:
+      linear-gradient(90deg, rgba(2, 4, 7, 0.98) 0%, rgba(2, 4, 7, 0.91) 27%, rgba(2, 4, 7, 0.46) 50%, rgba(2, 4, 7, 0.04) 73%),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.24), transparent 50%, rgba(0, 0, 0, 0.52));
+  }
+
+  .stars {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.38;
+    pointer-events: none;
+    background-image:
+      radial-gradient(circle at 16% 22%, #fff 0 1px, transparent 1.8px),
+      radial-gradient(circle at 31% 12%, #fff 0 1px, transparent 1.8px),
+      radial-gradient(circle at 45% 28%, #5ecbff 0 1px, transparent 2px),
+      radial-gradient(circle at 72% 18%, #fff 0 1px, transparent 1.8px),
+      radial-gradient(circle at 86% 30%, #fff 0 1px, transparent 1.8px);
+  }
+
+  .hero-content {
+    width: min(720px, 52vw);
+    margin-left: clamp(28px, 7.5vw, 120px);
+    padding-top: 75px;
+  }
+
+  .ornament,
+  .mini-divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--gold);
+  }
+
+  .ornament {
+    width: min(520px, 100%);
+    margin-bottom: 26px;
+  }
+
+  .ornament span,
+  .mini-divider span {
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .ornament b {
+    font-size: 1.65rem;
+    color: var(--gold-light);
+    text-shadow: 0 0 20px rgba(54, 167, 214, 0.45);
+  }
+
+  .eyebrow,
+  .section-kicker {
+    margin: 0 0 10px;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+
+  h1,
+  h2 {
+    font-family: "Cinzel", serif;
+  }
+
+  h1 {
+    margin: 0;
+    max-width: 640px;
+    font-size: clamp(4.6rem, 8.5vw, 8.7rem);
+    line-height: 0.82;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: -0.045em;
+    background: linear-gradient(180deg, #fff0bd 0%, #d6a84d 38%, #8c6526 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 6px 24px rgba(0, 0, 0, 0.60));
+  }
+
+  .lead {
+    margin: 28px 0 28px;
+    font-family: Georgia, serif;
+    font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+    color: #f4efe4;
+  }
+
+  .notify-form {
+    width: min(640px, 100%);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+  }
+
+  .input-wrap {
+    min-height: 58px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--gold-dark);
+    background: rgba(3, 5, 7, 0.78);
+    padding: 0 18px;
+    box-shadow: inset 0 0 28px rgba(0, 0, 0, 0.38);
+  }
+
+  .input-wrap span {
+    color: var(--gold);
+  }
+
+  .input-wrap input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    color: white;
+    background: transparent;
+  }
+
+  .input-wrap input::placeholder {
+    color: #918c84;
+  }
+
+  .notify-form button,
+  .outline-button {
+    min-height: 58px;
+    border: 1px solid var(--gold-dark);
+    cursor: pointer;
+    transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+  }
+
+  .notify-form button {
+    padding: 0 28px;
+    color: #151006;
+    font-family: "Cinzel", serif;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    background: linear-gradient(180deg, #f2cf73, #bd842b);
+    box-shadow: 0 10px 34px rgba(213, 168, 77, 0.20);
+  }
+
+  .notify-form button:hover,
+  .outline-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 38px rgba(213, 168, 77, 0.24);
+  }
+
+  .waitlist {
+    margin: 24px 0 14px;
+    color: #ddd8cf;
+    font-size: 0.92rem;
+  }
+
+  .mini-divider {
+    width: 320px;
+    max-width: 80%;
+    color: var(--gold);
+  }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    padding: 34px clamp(24px, 7vw, 112px);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background:
+      linear-gradient(180deg, rgba(11, 14, 18, 0.96), rgba(3, 5, 7, 0.98)),
+      repeating-linear-gradient(90deg, transparent 0 90px, rgba(213, 168, 77, 0.025) 91px);
+  }
+
+  .pillars article {
+    min-height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 34px;
+  }
+
+  .pillars article + article {
+    border-left: 1px solid rgba(213, 168, 77, 0.25);
+  }
+
+  .icon {
+    color: var(--gold);
+    font-size: 2.35rem;
+    min-width: 45px;
+    text-align: center;
+  }
+
+  .pillars h2 {
+    margin: 0 0 7px;
+    color: var(--gold-light);
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .pillars p {
+    margin: 0;
+    color: #a8a196;
+    font-size: 0.9rem;
+  }
+
+  .info-section {
+    min-height: 470px;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    padding: 80px 24px;
+    background:
+      radial-gradient(circle at center, rgba(30, 94, 128, 0.13), transparent 34%),
+      #05070a;
+  }
+
+  .info-section h2,
+  .updates-section h2 {
+    margin: 0;
+    color: #ead7a1;
+    font-size: clamp(2rem, 4vw, 4rem);
+  }
+
+  .info-section > p:last-child {
+    width: min(760px, 100%);
+    margin: 22px auto 0;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  .updates-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 70px clamp(24px, 8vw, 130px);
+    border-top: 1px solid rgba(213, 168, 77, 0.18);
+    background: #07090d;
+  }
+
+  .outline-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 28px;
+    color: var(--gold-light);
+    background: transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.11em;
+    font-size: 0.78rem;
+  }
+
+  .footer {
+    padding: 44px 24px;
+    text-align: center;
+    border-top: 1px solid var(--line);
+    background: #020304;
+    color: #7e786d;
+    font-size: 0.82rem;
+  }
+
+  .footer-symbol {
+    margin-bottom: 12px;
+    color: var(--gold);
+    font-size: 2rem;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (max-width: 980px) {
+    .nav {
+      display: none;
+    }
+
+    .hero {
+      min-height: 900px;
+      height: auto;
+      align-items: flex-end;
+      padding-bottom: 80px;
+    }
+
+    .hero-image {
+      background-position: 66% center;
+    }
+
+    .hero-overlay {
+      background:
+        linear-gradient(180deg, rgba(2, 4, 7, 0.10) 0%, rgba(2, 4, 7, 0.35) 30%, rgba(2, 4, 7, 0.96) 74%, #030507 100%),
+        linear-gradient(90deg, rgba(2, 4, 7, 0.55), rgba(2, 4, 7, 0.04));
+    }
+
+    .hero-content {
+      width: calc(100% - 48px);
+      margin: 0 24px;
+      padding-top: 470px;
+    }
+
+    h1 {
+      font-size: clamp(4.5rem, 18vw, 7rem);
+    }
+
+    .pillars {
+      grid-template-columns: 1fr;
+      padding: 12px 24px;
+    }
+
+    .pillars article {
+      justify-content: flex-start;
+    }
+
+    .pillars article + article {
+      border-left: 0;
+      border-top: 1px solid rgba(213, 168, 77, 0.20);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .topbar {
+      min-height: 76px;
+      padding-inline: 20px;
+    }
+
+    .brand {
+      font-size: 1rem;
+    }
+
+    .brand-mark {
+      font-size: 1.6rem;
+    }
+
+    .hero {
+      min-height: 860px;
+    }
+
+    .hero-image {
+      background-position: 63% top;
+      background-size: auto 62%;
+      background-repeat: no-repeat;
+      background-color: #030507;
+    }
+
+    .hero-content {
+      padding-top: 420px;
+    }
+
+    .ornament {
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      line-height: 0.88;
+      font-size: clamp(4rem, 20vw, 5.6rem);
+    }
+
+    .lead {
+      margin-top: 22px;
+      font-size: 1.05rem;
+    }
+
+    .notify-form {
+      grid-template-columns: 1fr;
+    }
+
+    .notify-form button {
+      width: 100%;
+    }
+
+    .updates-section {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+</style>
