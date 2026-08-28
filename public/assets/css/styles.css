@@ -362,7 +362,9 @@ button {
 .image-card img {
   width: 100%;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
+  background: #050b13;
 }
 
 .quote {
