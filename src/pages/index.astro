@@ -1,0 +1,230 @@
+---
+const slides = [
+  {
+    href: '/ancient-egypt',
+    label: 'Eternal Journey',
+    src: '/assets/images/banner-eternal-journey.png',
+    alt: 'Eternal Journey Ancient Egypt banner',
+  },
+  {
+    href: '/reddit',
+    label: 'Reddit',
+    src: '/assets/images/banner-reddit.png',
+    alt: 'Reddit banner',
+  },
+  {
+    href: '/money-management',
+    label: 'Money Management',
+    src: '/assets/images/banner-money-management.png',
+    alt: 'Money Management crypto jobs banner',
+  },
+  {
+    href: '/metaverse',
+    label: 'Metaverse',
+    src: '/assets/images/banner-metaverse.png',
+    alt: 'Second Life Metaverse banner',
+  },
+];
+
+const cards = [
+  ['/ancient-egypt', '/assets/images/card-ancient-egypt.png', 'Ancient Egypt card'],
+  ['/reddit', '/assets/images/card-reddit.png', 'Reddit card'],
+  ['/tiktok', '/assets/images/card-tiktok.png', 'TikTok card'],
+  ['/audiobook', '/assets/images/card-audiobook.png', 'Audiobook card'],
+  ['/money-management', '/assets/images/card-money-management.png', 'Money Management card'],
+  ['/metaverse', '/assets/images/card-metaverse.png', 'Metaverse card'],
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Boy King Tut Eternal Spark</title>
+    <meta
+      name="description"
+      content="Ancient Egypt, Reddit, TikTok, Audiobook, Money Management and Second Life Metaverse."
+    />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="/">
+          <span class="brand-mark">𓂀</span>
+          <span><strong>BOY KING TUT</strong><small>ETERNAL SPARK</small></span>
+        </a>
+
+        <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+        <nav class="menu">
+          <div class="menu-item"><a href="/">HOME</a></div>
+
+          <div class="menu-item">
+            <a href="/ancient-egypt">ANCIENT EGYPT</a>
+            <div class="dropdown">
+              <a href="/ancient-egypt">Ancient Egypt Home</a>
+              <a href="/ancient-egypt#tut">Boy King Tut</a>
+              <a href="/ancient-egypt#history">History &amp; Information</a>
+              <a href="/ancient-egypt#gallery">Photos &amp; Galleries</a>
+              <a href="/ancient-egypt#sites">Temples &amp; Ancient Sites</a>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <button type="button">COMMUNITY ▾</button>
+            <div class="dropdown">
+              <a href="/reddit">Reddit</a>
+              <a href="/tiktok">TikTok</a>
+            </div>
+          </div>
+
+          <div class="menu-item"><a href="/audiobook">AUDIOBOOK</a></div>
+
+          <div class="menu-item">
+            <a href="/money-management">MONEY MANAGEMENT</a>
+            <div class="dropdown">
+              <a href="/money-management#machine">Crypto Machine</a>
+              <a href="/money-management#discord">Discord</a>
+              <a href="/money-management#jobs">Crypto Jobs / Opportunities</a>
+              <a href="/money-management#faq">FAQ</a>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <a href="/metaverse">METAVERSE</a>
+            <div class="dropdown">
+              <a href="/metaverse#secondlife">Second Life</a>
+              <a href="/metaverse#gallery">Art Gallery</a>
+              <a href="/metaverse#classroom">Classroom</a>
+              <a href="/metaverse#meditation">Meditation</a>
+              <a href="/metaverse#club">Dance Club</a>
+            </div>
+          </div>
+
+          <div class="menu-item"><a href="/about">ABOUT</a></div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-label="Featured sections">
+        <div class="slides">
+          {slides.map((slide, index) => (
+            <a
+              class:list={['slide', { active: index === 0 }]}
+              href={slide.href}
+              aria-label={slide.label}
+            >
+              <img src={slide.src} alt={slide.alt} />
+            </a>
+          ))}
+        </div>
+
+        <div class="slider-ui">
+          <button data-prev aria-label="Previous banner">‹</button>
+          <div class="dots">
+            {slides.map((_, index) => (
+              <button
+                class:list={['dot', { active: index === 0 }]}
+                data-slide-index={index}
+                aria-label={`Slide ${index + 1}`}
+              ></button>
+            ))}
+          </div>
+          <button data-next aria-label="Next banner">›</button>
+        </div>
+      </section>
+
+      <section class="quick-portals">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">Choose Your Path</div>
+            <h2>Explore the Journey</h2>
+            <p>
+              Ancient history, original experiences, community, audio, money-management tools and a
+              creative Second Life world — organized into dedicated sections.
+            </p>
+          </div>
+
+          <div class="image-card-grid">
+            {cards.map(([href, src, alt]) => (
+              <a class="image-card" href={href}>
+                <img src={src} alt={alt} />
+              </a>
+            ))}
+          </div>
+
+          <div class="quote">
+            “BUILD YOUR OWN REALITY. BE ORIGINAL. CREATE, EXPERIENCE, AND KEEP MOVING FORWARD.”
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-row">
+        <div>© 2026 Boy King Tut Eternal Spark. All Rights Reserved.</div>
+        <div class="footer-links">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms-of-service">Terms of Service</a>
+          <a href="/disclaimer">Disclaimer</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const slides = Array.from(document.querySelectorAll('.slide'));
+      const dots = Array.from(document.querySelectorAll('.dot'));
+      const prev = document.querySelector('[data-prev]');
+      const next = document.querySelector('[data-next]');
+      const mobileToggle = document.querySelector('.mobile-toggle');
+      const menu = document.querySelector('.menu');
+
+      let current = 0;
+      let timer;
+
+      function showSlide(index) {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+      }
+
+      function startSlider() {
+        window.clearInterval(timer);
+        timer = window.setInterval(() => showSlide(current + 1), 6000);
+      }
+
+      prev?.addEventListener('click', () => {
+        showSlide(current - 1);
+        startSlider();
+      });
+
+      next?.addEventListener('click', () => {
+        showSlide(current + 1);
+        startSlider();
+      });
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          showSlide(index);
+          startSlider();
+        });
+      });
+
+      mobileToggle?.addEventListener('click', () => {
+        const isOpen = menu?.classList.toggle('open') ?? false;
+        mobileToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      document.querySelectorAll('.menu-item > button').forEach((button) => {
+        button.addEventListener('click', () => {
+          button.parentElement?.classList.toggle('open');
+        });
+      });
+
+      if (slides.length > 1) startSlider();
+    </script>
+  </body>
+</html>
